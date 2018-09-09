@@ -159,8 +159,6 @@ $$\ch(G) \leqslant \frac{3k(k+1)}{2} + 1.$$
 \end{itemize}
 
 \begin{algorithm}[H]\label{alg:szekeres-list-coloring}
- \KwData{A $k$-band buffering cellular graph $G$ and a set of colors $L(v)$ for all $v \in V(G)$ with $|L(v)| \geqslant \frac{3k(k+1)}{2} + 1$}
- \KwResult{$\left(\frac{3k(k+1)}{2} + 1\right)$-list coloring of $G$}
   Let $G^*$ be the $k$-bounded acyclic orientation of $G$\;
   \While{$V(G^*)$ is non-empty} {
   	Let $\alpha$ be a color from $L(v)$ where $v \in V(G^*)$\;
@@ -171,13 +169,22 @@ $$\ch(G) \leqslant \frac{3k(k+1)}{2} + 1.$$
   	Remove $\alpha$ from $L(v)$ for all $v \in V_\alpha$\;
   	Remove the colored nodes, that is, $V(G^*) := V(G^*) \setminus U$\;
   }
- \caption{$\left(\frac{3k(k+1)}{2} + 1\right)$-list coloring of a $k$-band buffering cellular graph}
 \end{algorithm}
+Algorithm correctness => Theorem 3.8 and Lemma 3.9.
 \end{frame}
-
 \begin{frame}
 \frametitle{Conclusions}
 \justifying
+\begin{itemize}
+\item A new bound has been obtained: $\ch(G) \leqslant \frac{3k(k+1)}{2} + 1$.
+\item For $k = 2$, $\ch(G) \leqslant 10$ => We generalized \cite{7248845}.
+\item Proved that $\chi(G^k) \leqslant \ch(G^k) \leqslant 2 \chi(G^k)$.
+\begin{itemize}
+\item It is easier to compute $\chi(G^k)$.
+\item Helps in network planning.
+\end{itemize}
+\item Polynomial algorithm created to list-color $k$-band buffering graphs.
+\end{itemize}
 \end{frame}
 
 \begin{frame}
