@@ -158,6 +158,11 @@ $$\ch(G) \leqslant \frac{3k(k+1)}{2} + 1.$$
 \item A polynomial algorithm has been developed that finds a proper list-coloring based on Galvin's theorem \cite{Galvin:1995:LCI:199352.199369}:
 \end{itemize}
 
+\begin{theo}[Galvin, 1995]\label{thm:galvin} Let $G$ be a graph and $\lbrace L(v) \mid v \in V(G) \rbrace$ given color sets. If $G$ has an orientation $D$ such that $d^+(v) < |L(v)|$ for all $v \in V(D)$ and every induced subgraph of $D$ has a kernel, then $G$ can be colored from the given color sets.
+\end{theo}
+Inductive proof => algorithm.
+
+\framebreak
 \begin{algorithm}[H]\label{alg:szekeres-list-coloring}
   Let $G^*$ be the $k$-bounded acyclic orientation of $G$\;
   \While{$V(G^*)$ is non-empty} {
@@ -171,6 +176,12 @@ $$\ch(G) \leqslant \frac{3k(k+1)}{2} + 1.$$
   }
 \end{algorithm}
 Algorithm correctness => Theorem 3.8 and Lemma 3.9.
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{figures/orientation-hexagonal-topology-wifi.pdf}
+\caption{Acyclic (white) and cylic (red) orientations}\label{fig:orientations-cellular-graph}
+\end{figure}
+Own contributions (Theorem 4.5, Lemma 2.12): If $G$ is a $k$-band buffering cellular graph then it has an acyclic orientation such that $d^+(v) \leqslant \frac{3k(k+1)}{2}.$
 \end{frame}
 \begin{frame}
 \frametitle{Conclusions}
